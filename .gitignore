@@ -1,0 +1,16 @@
+# Build results & Project VS
+.vs/
+bin/
+obj/
+
+# Debug / Release folders
+[Dd]ebug/
+[Rr]elease/
+
+# Visual Studio files
+*.user
+*.suo
+
+# OS-specific junk
+Thumbs.db
+.DS_Store
