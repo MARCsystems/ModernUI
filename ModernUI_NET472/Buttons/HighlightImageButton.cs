@@ -1,50 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ModernUI_NET472.Assets;
+using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ModernUI_NET472.Buttons
 {
+    [DesignerCategory("Control")]
     public class HighlightImageButton : Control
     {
-        private Label ctrlText;
+        private string tooltipText = string.Empty;
         public HighlightImageButton()
         {
-            ctrlText = new Label();
-            Controls.Add(ctrlText);
-            ctrlText.Text = string.Empty;
-            ctrlText.Dock = DockStyle.Fill;
-            ctrlText.TextAlign = ContentAlignment.MiddleCenter;
-
+            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImage = AppAssets.GetPlaceholderButton(false, AppAssets.ButtonMode.STANDARD);
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            Size = DefaultSize;
+            
+            MouseEnter += (s, e) => { BackgroundImage = AppAssets.GetPlaceholderButton(true, AppAssets.ButtonMode.STANDARD); };
+            MouseLeave += (s, e) => { BackgroundImage = AppAssets.GetPlaceholderButton(false, AppAssets.ButtonMode.STANDARD); };
+            MouseDown += (s, e) => { BackgroundImage = AppAssets.GetPlaceholderButton(true, AppAssets.ButtonMode.PRESSED); };
+            MouseUp += (s, e) => { BackgroundImage = AppAssets.GetPlaceholderButton(true, AppAssets.ButtonMode.STANDARD); };
         }
 
+        #region Class Functions
         private void updateControlInitials()
         {
-            if (string.IsNullOrEmpty(ctrlText.Text) && !string.IsNullOrEmpty(Name))
+            if (string.IsNullOrEmpty(tooltipText) && !string.IsNullOrEmpty(Name))
             {
-                ctrlText.Text = Name;
+                tooltipText = "No tooltip assigned.";
             }
         }
+        #endregion
 
         #region Properties
-        public string Text
+        [Category("_ModernUI_")]
+        public string TooltipText
         {
-            set { ctrlText.Text = value; }
-            get { return ctrlText.Text; }
+            set { tooltipText = value; new ToolTip().SetToolTip(this, tooltipText); }
+            get { return tooltipText; }
         }
+        #endregion
 
-        public ContentAlignment TextAlign
-        {
-            set { ctrlText.TextAlign = value; }
-            get { return ctrlText.TextAlign; }
-        }
-
+        #region Property Overrides
         [Category("Appearance")]
         private Size DefaultSize
         {
@@ -53,7 +50,7 @@ namespace ModernUI_NET472.Buttons
         }
         #endregion
 
-        #region Overrides
+        #region Designer Overrides
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
