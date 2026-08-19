@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ModernUI_NET472.Assets
 {
-    internal class AppAssets
+    public class AppAssets
     {
-        internal enum ButtonMode
+        public enum ButtonMode
         {
-            STANDARD, PRESSED, LOADING, DISABLED
+            STANDARD, PRESSED, LOADING, LOCKED, DISABLED
         }
 
         internal static Image GetPlaceholderButton(bool isHover, ButtonMode mode)
@@ -24,6 +24,8 @@ namespace ModernUI_NET472.Assets
                     return Properties.Resources.Pressed;
                 case ButtonMode.LOADING:
                     return Properties.Resources.Loading;
+                case ButtonMode.LOCKED:
+                    return isHover ? Properties.Resources.Locked_Hover : Properties.Resources.Locked_Standard;
                 case ButtonMode.DISABLED:
                     return isHover ? Properties.Resources.Disabled_Hover : Properties.Resources.Disabled_Standard;
                 default:

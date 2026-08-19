@@ -103,6 +103,26 @@ namespace ModernUI_NET472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Locked_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Locked_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Locked_Standard {
+            get {
+                object obj = ResourceManager.GetObject("Locked_Standard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pressed {
             get {
                 object obj = ResourceManager.GetObject("Pressed", resourceCulture);

@@ -130,6 +130,12 @@
   <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimalistButton\Loading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Locked_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimalistButton\Locked_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Locked_Standard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimalistButton\Locked_Standard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimalistButton\Pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
